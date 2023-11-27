@@ -20,12 +20,23 @@ sumOfPositiveNumber()
 
 
 //Q.2  find key
+//Create a function doesKeyExist(obj, key) that checks if a given key exists in the
+//provided object (obj).
+
 
 var obj = { name: "john", age: 25, city: "New York" }
 var key = "age"
 function doesKeyExists(obj, key) {
-    //console.log()
-    // if(key==obj.age)
+    //var result=key in obj
+    var result = obj.hasOwnProperty(key)
+    if (result) {
+        console.log(key, " key is exits in object")
+
+    }
+    else {
+        console.log(key, " key does not exits in object")
+    }
+
 }
 
 doesKeyExists(obj, key)
@@ -45,6 +56,23 @@ function findMaxVal() {
 }
 
 findMaxVal()
+
+//Q.4) Write a function countProperties that takes an object as input and returns the total
+//number of properties (keys) it contain
+
+var obj = { a: 1, b: 2, c: 3 }
+var cnt = 0
+function countProperties() {
+       let key
+    console.log("keys of object:")
+    for ( key in obj) {
+        cnt++
+        console.log(key)
+    }
+
+    console.log("Total count of keys:",cnt)
+}
+countProperties()
 
 /*output
 PS E:\github\awdiz\Javascript-Test1\Test1> node .\Test1.js
@@ -89,7 +117,7 @@ function removeDuplicateElement() {
             arr.push(array[i])
         }
     }
-    console.log(" unique elements of array :",arr)
+    console.log(" unique elements of array :", arr)
 }
 
 removeDuplicateElement()
@@ -100,24 +128,33 @@ PS E:\github\awdiz\Javascript-Test1\Test1> node .\Test1.js
 unique elements of array :[ 1, 2, 3, 4, 5 ]
 */
 
+/* : Implement a function sumObjectValues that calculates the sum of all numeric values
+in an object */
+
+var obj={a:10,b:20,c:30}
+const values = Object.values(obj);
+function sumObjectValues(){
+const sum = values.reduce((accumulator, value) => {
+    return accumulator + value;
+  }, 0);
+console.log("sum of object value:",sum)
+}
+
+sumObjectValues()
 
 //Q.9 element frequency
 
-var array=[1,2,3,1,2,4,1]
-var frequency=new Object()
-function elementFrequency()
-{
-    for(var i=0;i<array.length;i++)
-    {
-        var cnt=0
-        for(var j=0;j<array.length;j++)
-        {
-            if(array[i]==array[j])
-            {
+var array = [1, 2, 3, 1, 2, 4, 1]
+var frequency = new Object()
+function elementFrequency() {
+    for (var i = 0; i < array.length; i++) {
+        var cnt = 0
+        for (var j = 0; j < array.length; j++) {
+            if (array[i] == array[j]) {
                 cnt++
             }
         }
-         frequency.assign(array[i],cnt)
+        frequency.assign(array[i], cnt)
 
 
     }
