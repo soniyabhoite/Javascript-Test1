@@ -15,7 +15,7 @@ sumOfPositiveNumber()
 
 // output
 // PS E:\github\awdiz\Javascript-Test1\Test1> node .\Test1.js
-// sum of positive Number : 
+// sum of positive Number : 8
 
 
 
@@ -40,7 +40,9 @@ function doesKeyExists(obj, key) {
 }
 
 doesKeyExists(obj, key)
-
+/* output
+age  key is exits in object 
+*/
 
 //Q.3 max value
 
@@ -56,6 +58,10 @@ function findMaxVal() {
 }
 
 findMaxVal()
+
+/*output
+PS E:\github\awdiz\Javascript-Test1\Test1> node .\Test1.js
+max value: 9  */
 
 //Q.4) Write a function countProperties that takes an object as input and returns the total
 //number of properties (keys) it contain
@@ -75,8 +81,9 @@ function countProperties() {
 countProperties()
 
 /*output
-PS E:\github\awdiz\Javascript-Test1\Test1> node .\Test1.js
-max value: 9  */
+Total count of keys: 3
+*/
+
 
 //Q.5 Array Reverse
 
@@ -142,19 +149,23 @@ console.log("sum of object value:",sum)
 
 sumObjectValues()
 
+/*output
+sum of object value: 60
+*/
+
 //Q.9 element frequency
 
 var array = [1, 2, 3, 1, 2, 4, 1]
-var frequency = new Object()
+var frequency = new Map()
 function elementFrequency() {
     for (var i = 0; i < array.length; i++) {
         var cnt = 0
-        for (var j = 0; j < array.length; j++) {
+        for (var j = i+1; j < array.length; j++) {
             if (array[i] == array[j]) {
                 cnt++
             }
         }
-        frequency.assign(array[i], cnt)
+       frequency.set(array[i],cnt)
 
 
     }
