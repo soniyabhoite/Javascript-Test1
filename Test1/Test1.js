@@ -156,16 +156,25 @@ sum of object value: 60
 //Q.9 element frequency
 
 var array = [1, 2, 3, 1, 2, 4, 1]
-var frequency = new Map()
+var visited=-1
+var frequency = {}
 function elementFrequency() {
     for (var i = 0; i < array.length; i++) {
-        var cnt = 0
+        var cnt = 1
         for (var j = i+1; j < array.length; j++) {
+            console.log(array[i],array[j])
+            if(array[i]!=-1){
+            console.log(array[i],array[j])
             if (array[i] == array[j]) {
                 cnt++
+                 array[j]=visited
+                
+
             }
         }
-       frequency.set(array[i],cnt)
+        }
+        frequency[array[i]]=cnt
+      // frequency.set(array[i],cnt)
 
 
     }
